@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:17
+    container_name: demo_postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+    ports:
+    - 5432:5432
+    networks:
+    - my-pg-network
+    volumes:
+    - data:/var/lib/postgresql/data
+
+networks:
+  my-pg-network:
+    driver: bridge
+
+volumes:
+  data:
