@@ -1,0 +1,3 @@
+sudo docker build -t project .
+sudo docker run -d -it -p 8081:80 --name project1 project
+curl localhost:8081
